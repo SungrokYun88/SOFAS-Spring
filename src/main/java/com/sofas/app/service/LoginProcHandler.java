@@ -19,8 +19,8 @@ public class LoginProcHandler implements CommonHandler {
 		String pw = request.getParameter("pw");
 		
 		MemberDao dao = new MemberDao();
-		MemberDto dto = dao.loginMember1(id, pw);
-		
+	//	MemberDto dto = dao.loginMember1(id, pw);
+		MemberDto dto = null;
 		if(dto.getMember_idx() > 0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", dto);

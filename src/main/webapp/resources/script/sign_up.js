@@ -34,7 +34,7 @@ $(document).ready(function () {
             }
         }
     });
-    $(".sign_up_area input[name=name]").on({
+    $(".sign_up_area input[name=member_name]").on({
         focus:	function() { focusLabel(".label_name"); this.select() },
         blur:	function() { if($(this).val() == "") blurLabel($(".label_name")); },
         keyup: 	function() {
@@ -62,12 +62,12 @@ $(document).ready(function () {
             }
         }
     });
-    $(".sign_up_area input[name=tel]").on({
-        focus:	function() { focusLabel(".label_tel"); this.select() },
-        blur:	function() { if($(this).val() == "") blurLabel($(".label_tel")); },
+    $(".sign_up_area input[name=phone]").on({
+        focus:	function() { focusLabel(".label_phone"); this.select() },
+        blur:	function() { if($(this).val() == "") blurLabel($(".label_phone")); },
         keyup:	function() {
         	var input_val = $(this).val();
-        	var label = $(".label_tel");
+        	var label = $(".label_phone");
             // 전화번호 양식 조건
             if (!/^\d{10,11}$/.test(input_val) || !/^01[01679]/.test(input_val)) {
                 $(label).next().text("휴대폰 번호가 올바르지 않습니다. ( - 를 제외한 10~11자 번호 )");
@@ -178,10 +178,10 @@ $(document).ready(function () {
     	    }
 
     	    // tel
-    	    var tel = $(".sign_up_info input[name=tel]");
+    	    var tel = $(".sign_up_info input[name=phone]");
     	    var tel_success_chk = false;
     	    if (tel.val() == "") {
-    	        $(".label_tel").next().text("필수 입력사항입니다.");
+    	        $(".label_phone").next().text("필수 입력사항입니다.");
     	        $(tel).focus();
     	    } else if (!/^\d{10,11}$/.test(tel.val()) || !/^01[01679]/.test(tel.val())) {
     	        $(tel).focus();
@@ -224,7 +224,7 @@ $(document).ready(function () {
     	    }
 
     	    // name
-    	    var name = $(".sign_up_info input[name=name]");
+    	    var name = $(".sign_up_info input[name=member_name]");
     	    var name_success_chk = false;
     	    if (name.val() == "") {
     	        $(".label_name").next().text("필수 입력사항입니다.");
@@ -271,6 +271,8 @@ $(document).ready(function () {
     	    if (id_duplication_check && agree_success_chk && tel_success_chk && roadAddress_success_chk && detailAddress_success_chk
     	        && email_success_chk && name_success_chk && pw_success_chk && id_success_chk) {
     	        // 로그인 서브밋 처리
+    	        $("#address").val(postcode.val()+"//"+roadAddress.val()+"//"+detailAddress.val());
+
     	    	document.sign_up_form.action = "SignUpProc.do";
     	    	document.sign_up_form.submit();
     	    }

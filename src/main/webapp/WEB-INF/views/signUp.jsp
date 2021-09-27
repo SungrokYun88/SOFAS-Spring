@@ -46,8 +46,8 @@
                     <div class="alert_msg"></div>
                 </div>
                 <div class="sign_up_info">
-                    <input type="text" name="name" id="name" autocomplete="off">
-                    <label for="name" class="label_name">이름을 입력하세요.</label>
+                    <input type="text" name="member_name" id="member_name" autocomplete="off">
+                    <label for="member_name" class="label_name">이름을 입력하세요.</label>
                     <div class="alert_msg"></div>
                 </div>
                 <div class="sign_up_info">
@@ -73,9 +73,10 @@
                     <label for="detailAddress" class="label_detailAddress">상세주소를 입력하세요.</label>
                     <div class="alert_msg"></div>
                 </div>
+                <input type="hidden" name="address" id="address">
                 <div class="sign_up_info">
-                    <input type="text" name="tel" id="tel" autocomplete="off">
-                    <label for="tel" class="label_tel">휴대폰 번호를 입력하세요.</label>
+                    <input type="text" name="phone" id="phone" autocomplete="off">
+                    <label for="phone" class="label_phone">휴대폰 번호를 입력하세요.</label>
                     <div class="alert_msg"></div>
                 </div>
 

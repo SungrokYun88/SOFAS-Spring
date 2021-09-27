@@ -31,8 +31,8 @@ public class SignUpProcHandler implements CommonHandler {
 			String tel = request.getParameter("tel");
 
 			MemberDto dto = new MemberDto(id, pw, name, email, address, tel);
-			int insertResult = dao.insertMemberData(dto);
-
+		//	int insertResult = dao.insertMemberData(dto);
+			int insertResult = 0;
 			if (insertResult > 0) {
 				reflash.setAttribute("signup_chk", true);
 				return "/signUp_success.jsp";
